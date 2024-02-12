@@ -2,7 +2,13 @@
 
 Demonstrates the conversion of an ES6 module CountyJS to an IIFE so as to be consumed by a Lightning Web Component. This example shows how to convert the JS file within a Salesforce project. However, adding the IIFE generation as a build step in the JS library is the better way to go.
 
-CountyJS is a simple ES6 module that exports two functions, `findCountiesByName` and `findCountiesByState`. The two functions are exported and made available via the CountyJS namespace. 
+CountyJS is a simple ES6 module that exports two functions, `findCountiesByName` and `findCountiesByState`. The two functions are exported and made available via the CountyJS namespace.
+
+- [3rdPartyJS](#3rdpartyjs)
+  - [Converting ES6 to IIFE](#converting-es6-to-iife)
+  - [Seeing it in action](#seeing-it-in-action)
+  - [FAQ](#faq)
+
 
 ## Converting ES6 to IIFE
 
@@ -48,3 +54,10 @@ Deploy source to org `sf project deploy start`
 Open any App or Home lightning page and drag the counties component into place.
 
 Activate and Save
+
+## FAQ
+
+- Can I use `globalThis` instead of `window` to set my namespace?
+  - If you are deploying to an org with LWS enabled, yes, `globalThis` is supported. If your org or your customer orgs are not using LWS at this time, use `window`.
+- Can I use somethign other than webpack?
+  - Yes, ESBuild, Rollup, and Parcel are all options.
