@@ -1,0 +1,16 @@
+<template>
+  <div class="slds-text-heading_large">Counties in {state}</div>
+  <template for:each={countyList} for:item="county">
+    <lightning-layout key={county.CountyorEq}>
+      <lightning-layout-item size="12">
+        <lightning-card title={county.Name} icon-name="custom:custom14">
+          <div class="slds-m-around_medium">
+            <p><b>State:</b> {county.StateorEq}</p>
+            <p><b>Population:</b> {county.Population}</p>
+            <p><b>Area (sq miles):</b> {county.Area}</p>
+          </div>
+        </lightning-card>
+      </lightning-layout-item>
+    </lightning-layout>
+  </template>
+</template>
